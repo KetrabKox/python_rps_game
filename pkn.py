@@ -41,7 +41,6 @@ def choice():
 def r_and_p():
     global rounds
     global points
-    global punkty
     global enemy_points
     choice()
     if wybor=='r':
@@ -49,7 +48,7 @@ def r_and_p():
         return rounds
     elif wybor=='p':
         points=int(input('Podaj liczbę punktów, aby wygrać:\n'))
-        enemy_points=int(input('Podaj liczbę punktów, aby przeciwnik wygrał:\n'))
+        enemy_points=int(input('Podaj liczbę punktow, aby przeciwnik wygrał:\n'))
         enemy_points=enemy_points*-1
         return points, enemy_points
 
@@ -87,15 +86,23 @@ def play_PKM():
             user_choice=get_user_choice()
             computer_choice=get_computer_choice()
             determine_winner(user_choice, computer_choice)
+        if punkty>0:
+            print('Wygrałeś Grę! Gratulacje! Zapraszamy ponownie!')
+        elif punkty<0:
+            print('Tym razem wygrał komputer. Spróbuj ponownie!')
+        elif punkty==0:
+            print('Remis, spróbuj ponownie!')
+            
     elif wybor=='p':
         while punkty<points and punkty>enemy_points:
             user_choice=get_user_choice()
             computer_choice=get_computer_choice()
             determine_winner(user_choice, computer_choice)
-    if punkty==points:
-        print('Wygrałeś Grę! Gratulacje! Zapraszamy ponownie!')
-    elif punkty==enemy_points:
-        print('Tym razem wygrał komputer. Spróbuj ponownie!')
+        if punkty==points:
+            print('Wygrałeś Grę! Gratulacje! Zapraszamy ponownie!')
+        elif punkty==enemy_points:
+            print('Tym razem wygrał komputer. Spróbuj ponownie!')
+    
 
     next_game=input("Czy chcesz zagrać ponownie? (T/N): \n")
     if next_game.lower()=="t":
