@@ -7,15 +7,15 @@ punkty = 0
 def wygrana():
     global punkty
     punkty += 1
-    print(f'Wygrałeś! Masz {punkty} punktów')
+    print(f'Wygrałeś! Masz {punkty} pkt')
 
 def przegrana():
     global punkty
     punkty -= 1
-    print(f'Przegrałeś! Masz {punkty} punktów')
+    print(f'Przegrałeś! Masz {punkty} pkt')
 
 def remis():
-    print(f'Remis! Masz {punkty} punktów')
+    print(f'Remis! Masz {punkty} pkt')
 
 def get_user_choice():
     user_choice=input("Wybierz Papier, Kamień lub Nożyce: \n")
@@ -103,7 +103,7 @@ def play_PKM():
         play_PKM()
     elif next_game.lower()=="n":
         print("Koniec gry")
-        print(f"Twój wynik to {punkty} punktów")
+        print(f"Twój wynik to {punkty} pkt")
         quit()
     else:
         print("Nieprawidłowy wybór, zaczniemy gre od nowa.")
